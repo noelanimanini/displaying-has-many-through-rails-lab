@@ -1,0 +1,19 @@
+<%= form_for @appointment do |f| %>
+    <%= f.datetime_select :appointment_datetime %>
+    <%= f.collection_select :doctor, Doctor.all, :id, :name %>
+    <%= f.collection_select :patient, Patient.all, :id, :name %>
+    <%= f.submit %>
+  <% end %> 
+
+
+
+# <h1>Appointment Info</h1>
+# <div>
+# doctor - <%=link_to @appointment.doctor.name, doctor_path(@appointment.doctor_id)%>
+# </div>
+# <div>
+# patient - <%=link_to @appointment.patient.name, patient_path(@appointment.patient_id)%>
+# </div>
+# <div>
+# date - <%=@appointment.appointment_datetime.strftime('%B %e, %Y %k:%M') %>
+# </div>
